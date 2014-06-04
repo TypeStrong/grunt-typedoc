@@ -1,6 +1,6 @@
 # grunt-typedoc
 
-> Grunt [plugin](http://gruntjs.com/) to generate TypeScript docs with TypeDoc
+> Grunt [plugin](http://gruntjs.com/) to generate TypeScript docs with [TypeDoc](https://github.com/sebastian-lenz/typedoc)
 
 [![Build Status](https://secure.travis-ci.org/grunt-ts/grunt-typedoc.png?branch=master)](http://travis-ci.org/grunt-ts/grunt-typedoc) [![Dependency Status](https://gemnasium.com/grunt-ts/grunt-typedoc.png)](https://gemnasium.com/grunt-ts/grunt-typedoc) [![NPM version](https://badge.fury.io/js/grunt-typedoc.png)](http://badge.fury.io/js/grunt-typedoc)
 
@@ -25,17 +25,19 @@ grunt.loadNpmTasks('grunt-typedoc');
 
 ### Default Options
 
+All options are passed directly to [TypeDoc](https://sebastian-lenz.github.io/typedoc/).
+
 ```js
 grunt.initConfig({
 	typedoc: {
 		build: {
 			options: {
 				module: 'commonjs',
-				out: './out',
+				out: './docs',
 				name: 'my-project',
 				target: 'es5'
 			},
-			src: ['./build/**/*']
+			src: ['./src/**/*']
 		}
 	}
 });
@@ -43,7 +45,7 @@ grunt.initConfig({
 
 ## History
 
-* 0.1.0 - First release
+* 0.1.1 - First release
 
 ## Contributing
 

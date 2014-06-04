@@ -71,7 +71,6 @@ module.exports = function (grunt) {
 		}
 	});
 
-
 	grunt.registerTask('test', ['clean', 'jshint', 'typedoc:test', 'verify']);
 	grunt.registerTask('default', ['test']);
 };
