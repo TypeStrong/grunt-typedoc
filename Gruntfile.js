@@ -15,6 +15,8 @@ module.exports = function (grunt) {
 
 	grunt.loadTasks('tasks');
 
+	var path = require('path');
+
 	grunt.registerTask('verify', function () {
 		var done = this.async();
 		var expected = [
@@ -31,14 +33,14 @@ module.exports = function (grunt) {
 				done(err);
 				return;
 			}
-			files = files.map(function (file) {
-				return file.replace(/\\/, '/');
+			expected = expected.map(function (file) {
+				return path.join('test', 'tmp', file.replace(/[\\\/]/g, path.sep));
 			}).sort();
 
-			assert(files.length, expected.length, 'length');
+			files.sort();
 
-			files.forEach(function (file, i) {
-				assert(files[i], expected[i], 'file ' + i);
+			expected.forEach(function (file, i) {
+				assert(files.indexOf(file) > -1, 'file ' + i + ' ' + expected[i]);
 			});
 			grunt.log.writeln('verfied ' + expected.length + ' files');
 			done();
