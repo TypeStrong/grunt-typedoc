@@ -1,7 +1,7 @@
 {
   "name": "grunt-typedoc",
   "description": "Grunt plugin to generate TypeScript docs with TypeDoc",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "homepage": "https://github.com/grunt-ts/grunt-typedoc",
   "author": {
     "name": "Bart van der Schoor",
