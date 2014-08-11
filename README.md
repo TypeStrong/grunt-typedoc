@@ -43,6 +43,7 @@ grunt.initConfig({
 });
 ```
 
+
 ## History
 
 * 0.1.1 - First release
@@ -52,4 +53,11 @@ grunt.initConfig({
 Contributions are very welcome, please create an Issue before doing something major.
 
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+
+
+## License
+
+Copyright (c) 2014 [Bart van der Schoor](https://github.com/Bartvds)
+
+Licensed under the MIT license.
 
