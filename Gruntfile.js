@@ -20,7 +20,9 @@ module.exports = function (grunt) {
 	grunt.registerTask('verify', function () {
 		var done = this.async();
 		var expected = [
-			'modules/main.html',
+			'classes/_main_.bar.html',
+			'classes/_main_.foo.html',
+			'modules/_main_.html',
 			'globals.html',
 			'index.html'
 		];
