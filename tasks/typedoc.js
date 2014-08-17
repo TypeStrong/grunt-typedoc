@@ -7,8 +7,12 @@ module.exports = function (grunt) {
 		var args = [];
 		for (var key in options) {
 			if (options.hasOwnProperty(key)) {
-				args.push('--' + key);
-				args.push(options[key]);
+				if (options[key] === true) {
+					args.push('--' + key);
+				} else if (options[key] !== false) {
+					args.push('--' + key);
+					args.push(options[key]);
+				}
 			}
 		}
 		for (var i = 0; i < this.filesSrc.length; i++) {
