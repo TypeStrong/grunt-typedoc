@@ -2,7 +2,9 @@
 
 > Grunt [plugin](http://gruntjs.com/) to generate TypeScript docs with [TypeDoc](https://github.com/sebastian-lenz/typedoc)
 
-[![Build Status](https://secure.travis-ci.org/grunt-ts/grunt-typedoc.png?branch=master)](http://travis-ci.org/grunt-ts/grunt-typedoc) [![Dependency Status](https://gemnasium.com/grunt-ts/grunt-typedoc.png)](https://gemnasium.com/grunt-ts/grunt-typedoc) [![NPM version](https://badge.fury.io/js/grunt-typedoc.png)](http://badge.fury.io/js/grunt-typedoc)
+[![Build Status](https://api.travis-ci.org/TypeStrong/grunt-typedoc.png?branch=master)](http://travis-ci.org/TypeStrong/grunt-typedoc)
+[![Dependency Status](https://gemnasium.com/TypeStrong/grunt-typedoc.png)](https://gemnasium.com/TypeStrong/grunt-typedoc)
+[![NPM version](https://badge.fury.io/js/grunt-typedoc.png)](http://badge.fury.io/js/grunt-typedoc)
 
 Based on [gulp-typedoc](https://github.com/rogierschouten/gulp-typedoc) by @rogierschouten
 
@@ -60,4 +62,3 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 Copyright (c) 2014 [Bart van der Schoor](https://github.com/Bartvds)
 
 Licensed under the MIT license.
-
