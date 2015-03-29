@@ -8,7 +8,9 @@ module.exports = function (grunt) {
 		for (var key in options) {
 			if (options.hasOwnProperty(key)) {
 				args.push('--' + key);
-				args.push(options[key]);
+				if (!!options[key]) {
+					args.push(options[key]);
+				}
 			}
 		}
 		for (var i = 0; i < this.filesSrc.length; i++) {
