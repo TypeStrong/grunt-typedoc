@@ -6,3 +6,7 @@ export class Foo {
 export class Bar {
 	name: string;
 }
+
+export class Buzz {
+	prop: string | Bar[];
+}
