@@ -1,42 +1,29 @@
 module.exports = function (grunt) {
-	'use strict';
+  'use strict';
+  var typedocModule = require("typedoc");
 
-	grunt.registerMultiTask('typedoc', 'Generate TypeScript docs', function () {
-		var options = this.options({});
+  grunt.registerMultiTask('typedoc', 'Generate TypeScript docs', function () {
+    var options = this.options({});
 
-		var args = [];
-		for (var key in options) {
-			if (options.hasOwnProperty(key)) {
-				args.push('--' + key);
-				if (!!options[key]) {
-					args.push(options[key]);
-				}
-			}
-		}
-		for (var i = 0; i < this.filesSrc.length; i++) {
-			args.push(this.filesSrc[i]);
-		}
+    // leaving the 'out' or 'version' option in causes typedoc error for some reason
+    var out = options.out;
+    delete options.out;
+    delete options.version;
 
-		// lazy init
-		var path = require('path');
-		var child_process = require('child_process');
-
-		var winExt = /^win/.test(process.platform) ? '.cmd' : '';
-
-		var done = this.async();
-		var executable = path.resolve(require.resolve('typedoc/package.json'), '..', '..', '.bin', 'typedoc' + winExt);
-		
-		var child = child_process.spawn(executable, args, {
-			stdio: 'inherit',
-			env: process.env
-		}).on('exit', function (code) {
-			if (code !== 0) {
-				done(false);
-			}
-			if (child) {
-				child.kill();
-			}
-			done();
-		});
-	});
+    // typedoc instance
+    var app = new typedocModule.Application(options);
+    var src = app.expandInputFiles(this.filesSrc);
+    var project = app.convert(src);
+    if (project) {
+      if (out) app.generateDocs(project, out);
+      if (options.json) app.generateJson(project, options.json);
+      if (app.logger.hasErrors()) {
+        grunt.log.error('Error in TypeDoc generation');
+        return false;
+      }
+    } else {
+      grunt.log.error('Error in TypeDoc generation');
+      return false;
+    }
+  });
 };
