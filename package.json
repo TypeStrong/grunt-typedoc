@@ -33,7 +33,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "typedoc": "^0.3.1"
+    "typedoc": "^0.3.11"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
