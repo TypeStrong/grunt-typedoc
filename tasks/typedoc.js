@@ -8,7 +8,7 @@ module.exports = function (grunt) {
 		for (var key in options) {
 			if (options.hasOwnProperty(key)) {
 				args.push('--' + key);
-				if (!!options[key]) {
+				if (typeof(options[key]) !== 'boolean') {
 					args.push(options[key]);
 				}
 			}
