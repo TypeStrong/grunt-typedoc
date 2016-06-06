@@ -6,9 +6,9 @@ module.exports = function (grunt) {
 
 		var args = [];
 		for (var key in options) {
-			if (options.hasOwnProperty(key) && (typeof options[key] !== "boolean" || options[key])) {
+			if (options.hasOwnProperty(key) && (typeof options[key] !== 'boolean' || options[key])) {
 				args.push('--' + key);
-				if (typeof options[key] !== "boolean" && !!options[key]) {
+				if (typeof options[key] !== 'boolean' && !!options[key]) {
 					args.push(options[key]);
 				}
 			}
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
 		try {
 			typedoc = require.resolve('../../typedoc/package.json');
 		} catch(e) {
-			typedoc = require.resolve('typedoc/package.json')
+			typedoc = require.resolve('typedoc/package.json');
 		}
 
 		var winExt = /^win/.test(process.platform) ? '.cmd' : '';
