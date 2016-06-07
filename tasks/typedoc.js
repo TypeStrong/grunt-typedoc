@@ -1,5 +1,6 @@
+'use strict';
+
 module.exports = function (grunt) {
-	'use strict';
 
 	grunt.registerMultiTask('typedoc', 'Generate TypeScript docs', function () {
 		var options = this.options({});
@@ -32,7 +33,7 @@ module.exports = function (grunt) {
 
 		var done = this.async();
 		var executable = path.resolve(typedoc, '..', '..', '.bin', 'typedoc' + winExt);
-		
+
 		var child = child_process.spawn(executable, args, {
 			stdio: 'inherit',
 			env: process.env
